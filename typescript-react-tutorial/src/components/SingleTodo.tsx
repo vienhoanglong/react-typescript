@@ -1,14 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
-import { Todo } from "../model"
 import {AiOutlineEdit, AiOutlineDelete, AiOutlineCheck, AiOutlineClose} from "react-icons/ai"
 import { Draggable } from "react-beautiful-dnd"
-export type Props = {
-    index: number
-    todo: Todo,
-    todos: Todo[],
-    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
-}
-
+import { Props } from "./Props"
 const SingleTodo: React.FC<Props> = ({index, todo, todos, setTodos}) => {
     const [edit, setEdit] = useState<boolean>(false)
     const [editTodo, setEditTodo] = useState<string>(todo.todo)
